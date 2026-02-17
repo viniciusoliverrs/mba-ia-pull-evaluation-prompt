@@ -125,7 +125,7 @@ Tabela 1: Evolução de scores através de 9 iterações
 | V2.4 | 0.7925 | -0.0128 | Ultra simplification | 4,500 |
 | V2.5 | 0.8650 | +0.0725 | Evidence Anchoring v1 | 8,000 |
 | **V2.7** | 0.8949 | +0.0299 | Evidence Anchoring v2 | 10,009 |
-| V2.8 | 0.8870 | -0.0079 | +seção estruturada | 10,375 |
+| V2.8 (beta) | 0.8870 | -0.0079 | +seção estruturada | 10,375 |
 | **V2.8 (Final)** | **0.9063** | **+0.0114** | **Correctness Surgeon (Constraint Alignment)** | **9,686** |
 
 *Score estimado baseado em métricas parciais

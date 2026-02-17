@@ -28,6 +28,12 @@ Confira os traces detalhados das execuções e a avaliação completa no LangSmi
 🔗 **[Dashboard Público do LangSmith (Avaliação V2.8)](https://smith.langchain.com/public/8da0373c-6332-47da-810a-8531273934d4/d)** 
 *(Substitua este link pelo seu link real após o push)*
 
+### 💰 Custo e Eficiência (OpenAI)
+
+O uso do `gpt-4o-mini` para a geração provou ser extremamente eficiente em termos de custo, mantendo alta qualidade.
+
+![Custo e Performance](snapshots/cost.png)
+
 ---
 
 ## 🛠 Técnicas Aplicadas (Fase 2)
@@ -154,6 +160,40 @@ Para validar se o prompt segue as boas práticas (estrutura, metadados):
 ```bash
 pytest tests/test_prompts.py
 ```
+
+![Evidência de Testes](snapshots/test.png)
+
+---
+
+## 🆚 Comparativo Técnico: V1 vs V2.8
+
+Abaixo, um detalhamento das diferenças técnicas que levaram ao salto de performance:
+
+| Feature | Prompt V1 (Baseline) | Prompt V2.8 (Otimizado) | Impacto Principal |
+| :--- | :--- | :--- | :--- |
+| **Tamanho** | ~290 caracteres | ~10.000 caracteres | Maior contexto e especificidade |
+| **Persona** | Genérica ("Assistente") | Especialista ("Solutions Architect / PM") | Ativação de conhecimento específico |
+| **Exemplos (Few-Shot)** | Zero (0) | Três (3) exemplos reais detalhados | Modelo aprende formato e estilo por imitação |
+| **Raciocínio (CoT)** | Nenhum | Processo de 6 etapas obrigatórias | Redução de alucinações e erros lógicos |
+| **Estrutura de Saída** | Livre | 9 Seções Obrigatórias (Skeleton of Thought) | Padronização profissional para integração |
+| **Tratamento de Erros** | Inexistente | Tabela de Regras (Constraint Alignment) | Eliminação de conflitos de instrução |
+| **Recall de Dados** | Baixo (< 50%) | **Evidence Anchoring** (4 pontos de reforço) | **Preservação literal** de IDs, logs e datas |
+
+---
+
+## 📅 Etapas do Projeto
+
+O desenvolvimento seguiu um ciclo rigoroso de engenharia de prompt:
+
+1.  **Setup & Pull**: Configuração do ambiente e download do prompt V1 original via LangSmith.
+2.  **Baseline Evaluation**: Avaliação inicial mostrando scores baixos (~0.45).
+3.  **Otimização Iterativa**:
+    *   *Role Prompting* para definir a persona.
+    *   *Few-Shot Learning* com curadoria de "Golden Data".
+    *   *Chain of Thought* para forçar planejamento antes da geração.
+    *   *Evidence Anchoring* desenvolvido especificamente para resolver falhas de recall.
+4.  **Avaliação Rigorosa**: Uso de LLM-as-a-Judge (GPT-4o) para validar 15 casos de teste.
+5.  **Push Final**: Publicação da versão V2.8 no LangSmith Hub.
 
 ---
 
