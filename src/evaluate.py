@@ -212,6 +212,10 @@ def evaluate_prompt(
                 precision_scores.append(precision["score"])
 
                 print(f"      [{i}/{min(10, len(examples))}] F1:{f1['score']:.2f} Clarity:{clarity['score']:.2f} Precision:{precision['score']:.2f}")
+                print(f"      🔎 F1 Reasoning: {f1.get('reasoning', 'N/A')}")
+                print(f"      🔎 Clarity Reasoning: {clarity.get('reasoning', 'N/A')}")
+                print(f"      🔎 Precision Reasoning: {precision.get('reasoning', 'N/A')}")
+                print("-" * 40)
 
         avg_f1 = sum(f1_scores) / len(f1_scores) if f1_scores else 0.0
         avg_clarity = sum(clarity_scores) / len(clarity_scores) if clarity_scores else 0.0
