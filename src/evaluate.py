@@ -315,6 +315,7 @@ def main():
     print("  python src/push_prompts.py\n")
 
     prompts_to_evaluate = [
+        "bug_to_user_story_v1",
         "bug_to_user_story_v2",
     ]
 
