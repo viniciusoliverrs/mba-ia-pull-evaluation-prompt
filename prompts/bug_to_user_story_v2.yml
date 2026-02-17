@@ -1,5 +1,5 @@
 bug_to_user_story_v2:
-  description: "Prompt V28.0 - Correctness Surgeon (Unbanning Circuit Breaker, Specific Cache)"
+  description: "Prompt V2.0 - Correctness Surgeon (Unbanning Circuit Breaker, Specific Cache)"
   techniques:
     - "Role Prompting: Solutions Architect"
     - "Few-shot Learning: 3 REAL examples"
@@ -141,6 +141,6 @@ bug_to_user_story_v2:
 
   user_prompt: "{bug_report}"
 
-  version: "v28.0"
+  version: "v2"
   created_at: "2026-02-17"
   optimized: true
