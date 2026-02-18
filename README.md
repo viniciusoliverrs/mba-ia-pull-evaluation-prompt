@@ -1,6 +1,6 @@
 # Pull, Otimização e Avaliação de Prompts com LangChain e LangSmith
 
-> 🎓 **Projeto Final** - MBA em Inteligência Artificial (Full Cycle)
+> 🎓 **Projeto Engenhaia de Software com Inteligência Artificial (Full Cycle)****
 > 
 > **Objetivo:** Transformar um prompt de baixa qualidade (V1) em uma solução robusta (V2) capaz de converter Relatórios de Bugs técnicos em User Stories profissionais, atingindo métricas de avaliação > 0.90.
 
