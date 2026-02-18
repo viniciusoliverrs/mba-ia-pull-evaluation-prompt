@@ -180,6 +180,17 @@ Mean: 0.81, Median: 0.75, Std: 0.12
 
 **Observação:** O "teto" anteriormente observado em 0.89 foi rompido na V2.8 (0.9063) ao removermos restrições contraditórias (ex: proibição de "Circuit Breaker" que era exigido no Ground Truth). Isso prova que o limite não era arquitetural, mas sim de instrução (Instruction Conflict).
 
+### 3.6 Validação Cruzada com Google Gemini
+
+Realizamos uma validação cruzada utilizando o modelo Google Gemini (Flash/Pro) para avaliar a generalização do prompt.
+
+![Resultados Gemini](snapshots/gemini_test.png)
+
+**Principais Observações:**
+1. **Instruction Following:** O modelo Gemini demonstrou menor aderência à estrutura rígida *Skeleton of Thought* em comparação ao GPT-4o, tendendo a simplificar seções ou fundir critérios de aceitação.
+2. **Throughput:** A limitação de Rate Limit (15 RPM) na camada gratuita provou-se um gargalo bloqueante para avaliação em batch (n=15), exigindo *backoff* exponencial que aumentou o tempo total de execução em 400% comparado ao OpenAI.
+3. **Custo-Benefício:** Embora extremamente rápido e barato para inferência unitária, a instabilidade em batch processing sugere que o uso de Gemini para este pipeline específico requer migração para tiers pagos ou arquitetura de filas assíncronas.
+
 ---
 
 ## 4. Discussão

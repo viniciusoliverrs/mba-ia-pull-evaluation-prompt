@@ -438,6 +438,14 @@ python src/push_prompts.py
   - Tempo real: ~2 minutos
   - Status: Concluído
 
+#### 📊 Resultados Comparativos: OpenAI vs Gemini
+
+![Gemini Test Results](snapshots/gemini_test.png)
+
+**Análise Qualitativa:**
+- **Gemini (Flash/Pro):** Demonstrou alta velocidade para prompts simples, mas enfrentou dificuldades com a complexidade do *Skeleton of Thought* (v2.8), simplificando algumas instruções. O principal obstáculo foi o *Rate Limit* agressivo de 15 RPM, exigindo implementação de *backoff* exponencial.
+- **OpenAI (GPT-4o-mini):** Demonstrou maior fidelidade às instruções complexas de *Chain of Thought* e *Evidence Anchoring*, mantendo consistência estrutural superior.
+
 #### Comando Executado
 ```bash
 python src/evaluate.py

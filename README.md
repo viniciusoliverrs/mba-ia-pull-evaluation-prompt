@@ -163,6 +163,21 @@ pytest tests/test_prompts.py
 
 ![Evidência de Testes](snapshots/test.png)
 
+### 5. Comparativo de Providers (OpenAI vs Gemini)
+
+Foi realizado um teste comparativo entre os modelos **OpenAI GPT-4o-mini** e **Google Gemini**.
+
+![Gemini Test Results](snapshots/gemini_test.png)
+
+| Característica | OpenAI (GPT-4o-mini) | Google Gemini (Flash/Pro) |
+| :--- | :--- | :--- |
+| **Performance** | Alta precisão em lógica complexa | Rápido para tarefas simples |
+| **Robustez** | Respeita estritamente o System Prompt | Tende a simplificar instruções longas |
+| **Rate Limits** | Estável em Tier 1+ | Severo (15 req/min) na camada gratuita, causando erros 429 |
+| **Custo** | $0.15 / 1M input tokens | Gratuito (até limite) ou muito baixo |
+
+**Conclusão:** Para este pipeline de avaliação intensiva (batch processing), o **OpenAI GPT-4o-mini** se mostrou mais robusto devido à ausência de *throttling* agressivo, permitindo a execução do dataset completo (15 exemplos) em ~2 minutos, enquanto o Gemini exigiu *backoff* exponencial significativo.
+
 ---
 
 ## 🆚 Comparativo Técnico: V1 vs V2.8
