@@ -32,7 +32,7 @@ Confira os traces detalhados das execuções e a avaliação completa no LangSmi
 
 O uso do `gpt-4o-mini` para a geração provou ser extremamente eficiente em termos de custo, mantendo alta qualidade.
 
-![Custo e Performance](snapshots/cost.png)
+![Custo e Performance](snapshots/openai_cost.png)
 
 ---
 
