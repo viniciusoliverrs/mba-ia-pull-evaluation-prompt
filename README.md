@@ -161,7 +161,7 @@ Para validar se o prompt segue as boas práticas (estrutura, metadados):
 pytest tests/test_prompts.py
 ```
 
-![Evidência de Testes](snapshots/test.png)
+![Evidência de Testes](snapshots/openaitest.png)
 
 ### 5. Comparativo de Providers (OpenAI vs Gemini)
 
